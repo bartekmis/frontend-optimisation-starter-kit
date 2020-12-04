@@ -3,6 +3,8 @@ This starter kit has been created based on:
 
 [![npm](https://img.shields.io/npm/v/@jr-cologne/create-gulp-starter-kit.svg)](https://www.npmjs.com/package/@jr-cologne/create-gulp-starter-kit)
 
+In the starter kit you can see sample HTML, JS and SCSS files that are useful for students of the [online course](https://www.webdevinsider.pl/zoptymalizowany-frontend) about web performance optimisation. Feel free to remove the files if you want to start using this boilerplate for your own project and initially optimise it using the build process.
+
 > A simple Gulp 4 Starter Kit for modern web development.
 
 ## Features / Use Cases
