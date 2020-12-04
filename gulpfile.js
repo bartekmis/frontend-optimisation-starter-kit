@@ -1,5 +1,5 @@
 /**
- * A simple Gulp 4 Starter Kit for modern web development.
+ * Front-end / web performance optimisation starter kit based on a simple Gulp 4 Starter Kit for modern web development.
  *
  * @package @jr-cologne/create-gulp-starter-kit
  * @author JR Cologne <kontakt@jr-cologne.de>

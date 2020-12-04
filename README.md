@@ -1,4 +1,6 @@
-# Gulp Starter Kit
+# Front-end / web performance optimisation starter kit
+This starter kit has been created based on:
+
 [![npm](https://img.shields.io/npm/v/@jr-cologne/create-gulp-starter-kit.svg)](https://www.npmjs.com/package/@jr-cologne/create-gulp-starter-kit)
 
 > A simple Gulp 4 Starter Kit for modern web development.
@@ -45,35 +47,19 @@ These [npm](https://www.npmjs.com/) packages are used in the Gulp Starter Kit:
 - [gulp-pug](https://www.npmjs.com/package/gulp-pug)
 - [gulp-less](https://www.npmjs.com/package/gulp-less)
 - [gulp-stylus](https://www.npmjs.com/package/gulp-stylus)
+- [sw-precache](https://www.npmjs.com/package/sw-precache)
+- [sw-toolbox](https://www.npmjs.com/package/sw-toolbox)
+- [gulp-purgecss](https://www.npmjs.com/package/gulp-purgecss)
+- [critical](https://www.npmjs.com/package/critical)
 
 For more information, take a look at the [package.json](package.json) file or visit the linked npm package sites.
 
-## Getting Started
-In order to get started, make sure you are meeting all requirements listed above.
-Then, just go ahead and download the Gulp Starter Kit. For this, you can choose between the following options:
-
-### `npm init`
-The recommended way of downloading the Gulp Starter Kit uses the command `npm init` and the [`create-gulp-starter-kit` npm package](https://www.npmjs.com/package/@jr-cologne/create-gulp-starter-kit) as the initializer.
-
-For this, just follow these steps:
-
-1. Execute `npm init @jr-cologne/gulp-starter-kit your-project-name`. This creates a folder called `your-project-name` (change that to your project name) at the current location where your terminal / command prompt is pointing to. Moreover, this initializes your project and installs all dependencies.
-2. Change your working directory to your project folder by executing `cd your-project-name`.
-3. Spin up your web development environment with the command `npm start`.
-4. Start coding!
-
-In case you are lazy, just use this command:
-
-```bash
-npm init @jr-cologne/gulp-starter-kit your-project-name && cd your-project-name && npm start
-```
-
-### `git clone`
+### Getting started: `git clone`
 The other way of downloading the Gulp Starter Kit is by cloning this Git repository. Before executing any commands, make sure you have [Git](https://git-scm.com/) installed on your computer.
 
 Then, follow these instructions:
 
-1. Execute `git clone https://github.com/jr-cologne/gulp-starter-kit.git your-project-name`. This creates a folder called `your-project-name` (change that to your project name) at the current location where your terminal / command prompt is pointing to.
+1. Execute `git clone https://github.com/bartekmis/frontend-optimisation-starter-kit your-project-name`. This creates a folder called `your-project-name` (change that to your project name) at the current location where your terminal / command prompt is pointing to.
 2. Change your working directory to your project folder by executing `cd your-project-name`.
 3. Install all dependencies by executing `npm install`.
 4. Spin up your web development environment with the command `npm start`.
@@ -82,18 +68,12 @@ Then, follow these instructions:
 If you are lazy, just do everything at once:
 
 ```bash
-git clone https://github.com/jr-cologne/gulp-starter-kit.git your-project-name && cd your-project-name && npm install && npm start
+git clone https://github.com/bartekmis/frontend-optimisation-starter-kit your-project-name && cd your-project-name && npm install && npm start
 ```
+
+2. Many features of the build process is not enabled by default - look into [gulpfile.js](gulpfile.js) to see what processes are commented. Feel free to uncomment and start using them.
 
 ## Usage / FAQ
-### How to install the Gulp Starter Kit into the current working directory?
-You can install the Gulp Starter Kit into the current working directory by appending `--current-dir` to the end of the `npm init` command.
-
-Example:
-```bash
-npm init @jr-cologne/gulp-starter-kit your-project-name --current-dir
-```
-
 ### What kinds of build scripts does the Gulp Starter Kit offer?
 The Gulp Starter Kit offers two different build scripts:
 
