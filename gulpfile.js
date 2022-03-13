@@ -21,7 +21,6 @@ const gulp                      = require('gulp'),
       del                       = require('del'),
       sourcemaps                = require('gulp-sourcemaps'),
       plumber                   = require('gulp-plumber'),
-      sass                      = require('gulp-sass'),
       less                      = require('gulp-less'),
       stylus                    = require('gulp-stylus'),
       autoprefixer              = require('gulp-autoprefixer'),
@@ -30,13 +29,13 @@ const gulp                      = require('gulp'),
       webpack                   = require('webpack-stream'),
       uglify                    = require('gulp-uglify'),
       concat                    = require('gulp-concat'),
-      imagemin                  = require('gulp-imagemin'),
       browserSync               = require('browser-sync').create(),
       dependents                = require('gulp-dependents'),
       htmlmin                   = require('gulp-htmlmin'),
       swPrecache                = require('sw-precache'),
       path                      = require('path'),
       critical                  = require('critical'),
+      sass                      = require('gulp-sass')(require('sass')),
       purgecss                  = require('gulp-purgecss'),
 
       src_folder                = './src/',
@@ -61,44 +60,15 @@ gulp.task('html-minified', () => {
     .pipe(gulp.dest(dist_folder))
 });
 
-gulp.task('sass', () => {
+gulp.task('sass', (cb) => {
   return gulp.src([
     src_assets_folder + 'sass/**/*.sass',
     src_assets_folder + 'scss/**/*.scss'
-  ], { since: gulp.lastRun('sass') })
-    .pipe(sourcemaps.init())
-      .pipe(plumber())
-      .pipe(dependents())
-      .pipe(sass())
-      .pipe(autoprefixer())
-      //.pipe(minifyCss())
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(dist_assets_folder + 'css'))
-    .pipe(browserSync.stream());
-});
+  ])
+  .pipe(sass().on('error', sass.logError))
+  .pipe(gulp.dest(dist_assets_folder + 'css'));
 
-gulp.task('less', () => {
-  return gulp.src([ src_assets_folder + 'less/**/!(_)*.less'], { since: gulp.lastRun('less') })
-    .pipe(sourcemaps.init())
-      .pipe(plumber())
-      .pipe(less())
-      .pipe(autoprefixer())
-      .pipe(minifyCss())
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(dist_assets_folder + 'css'))
-    .pipe(browserSync.stream());
-});
-
-gulp.task('stylus', () => {
-  return gulp.src([ src_assets_folder + 'stylus/**/!(_)*.styl'], { since: gulp.lastRun('stylus') })
-    .pipe(sourcemaps.init())
-      .pipe(plumber())
-      .pipe(stylus())
-      .pipe(autoprefixer())
-      .pipe(minifyCss())
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(dist_assets_folder + 'css'))
-    .pipe(browserSync.stream());
+  cb();
 });
 
 gulp.task('purgecss', () => {
@@ -148,7 +118,6 @@ gulp.task('js-minified', () => {
 gulp.task('images', () => {
   return gulp.src([ src_assets_folder + 'images/**/*.+(png|jpg|jpeg|gif|svg|ico)' ], { since: gulp.lastRun('images') })
     .pipe(plumber())
-    /*.pipe(imagemin())*/
     .pipe(gulp.dest(dist_assets_folder + 'images'))
     .pipe(browserSync.stream());
 });
@@ -223,8 +192,6 @@ gulp.task(
     'clear', 
     'html', /* replace the 'html' with 'html-minified' if you need minification */ 
     'sass', 
-    'less', 
-    'stylus', 
     'js', 
     'js-copy', /* replace the 'js-copy' with 'js-minified' if you need minification */
     'fonts', 
@@ -237,7 +204,7 @@ gulp.task(
   )
 );
 
-gulp.task('dev', gulp.series('html', 'sass', 'less', 'fonts', 'videos', 'extra-files', 'stylus', 'js', 'js-copy'));
+gulp.task('dev', gulp.series('html', 'sass', 'fonts', 'videos', 'extra-files', 'js', 'js-copy'));
 
 gulp.task('serve', () => {
   return browserSync.init({
@@ -258,8 +225,6 @@ gulp.task('watch', () => {
     src_folder + '**/*.html',
     src_assets_folder + 'sass/**/*.sass',
     src_assets_folder + 'scss/**/*.scss',
-    src_assets_folder + 'less/**/*.less',
-    src_assets_folder + 'stylus/**/*.styl',
     src_assets_folder + 'js/**/*.js',
     src_assets_folder + 'fonts/**/*',
     src_assets_folder + 'videos/**/*',

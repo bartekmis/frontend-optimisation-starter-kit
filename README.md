@@ -24,7 +24,7 @@ Here is a list of the current features:
 ## Requirements
 This should be installed on your computer in order to get up and running:
 
-- [Node.js](https://nodejs.org/en/) (Required node version is >= 10.0)
+- [Node.js](https://nodejs.org/en/) (Required node version is >= 16.13.0)
 - [Gulp 4](https://gulpjs.com/)
 
 ## Dependencies
@@ -44,7 +44,6 @@ These [npm](https://www.npmjs.com/) packages are used in the Gulp Starter Kit:
 - [gulp-sass](https://www.npmjs.com/package/gulp-sass)
 - [gulp-sourcemaps](https://www.npmjs.com/package/gulp-sourcemaps)
 - [gulp-uglify](https://www.npmjs.com/package/gulp-uglify)
-- [gulp-imagemin](https://www.npmjs.com/package/gulp-imagemin)
 - [webpack-stream](https://www.npmjs.com/package/webpack-stream)
 - [gulp-pug](https://www.npmjs.com/package/gulp-pug)
 - [gulp-less](https://www.npmjs.com/package/gulp-less)
