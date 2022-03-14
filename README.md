@@ -12,7 +12,6 @@ This Gulp Starter Kit provides a simple way of setting up a modern web developme
 Here is a list of the current features:
 
 - Copy HTML files from `src` to `dist` directory
-- Compile Pug template files (`.pug`) from `src` to HTML files and put them inside `dist` directory
 - Compile CSS preprocessor code (Sass/SCSS) to CSS
 - Autoprefix and minify CSS and put it inside `dist` directory
 - Compile ES6+ to ES5, concatenate JS files and minify code
@@ -45,7 +44,6 @@ These [npm](https://www.npmjs.com/) packages are used in the Gulp Starter Kit:
 - [gulp-sourcemaps](https://www.npmjs.com/package/gulp-sourcemaps)
 - [gulp-uglify](https://www.npmjs.com/package/gulp-uglify)
 - [webpack-stream](https://www.npmjs.com/package/webpack-stream)
-- [gulp-pug](https://www.npmjs.com/package/gulp-pug)
 - [sw-precache](https://www.npmjs.com/package/sw-precache)
 - [sw-toolbox](https://www.npmjs.com/package/sw-toolbox)
 - [gulp-purgecss](https://www.npmjs.com/package/gulp-purgecss)
