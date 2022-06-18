@@ -1,0 +1,52 @@
+produkcja: https://frontend-optimisation-starter-kit-lime.vercel.app/
+
+webpagetest 25.05.2021
+First Byte
+.736S
+Start Render
+2.900S
+FCP
+2.590S
+Speed Index
+8.770S
+LCP
+11.705S
+CLS
+.053
+TBT
+≥ 3.897S
+Total Bytes
+13,296KB
+
+devtools lighthouse performance desktop 25.05.2021
+64
+First Contentful Paint
+0.6 s
+Time to Interactive
+0.9 s
+Speed Index
+3.7 s
+Total Blocking Time
+130 ms
+Largest Contentful Paint
+7.9 s
+Cumulative Layout Shift
+0.065
+
+
+devtools lighthouse performance desktop - localhost 25.05.2021
+55
+First Contentful Paint
+0.8 s
+Time to Interactive
+7.6 s
+Speed Index
+3.9 s
+Total Blocking Time
+80 ms
+Largest Contentful Paint
+10.8 s
+Cumulative Layout Shift
+0.098
+
+
